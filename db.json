@@ -1,0 +1,900 @@
+{
+  "categories": [
+    {
+      "id": "cars",
+      "name": "Cars",
+      "icon": "🚘",
+      "description": "For the love of the drive"
+    },
+    {
+      "id": "anime",
+      "name": "Anime",
+      "icon": "✦",
+      "description": "Worlds worth getting lost in"
+    },
+    {
+      "id": "movies",
+      "name": "Movies",
+      "icon": "🎬",
+      "description": "Frame your favourites"
+    },
+    {
+      "id": "music",
+      "name": "Music",
+      "icon": "♫",
+      "description": "Made for the encore"
+    },
+    {
+      "id": "gaming",
+      "name": "Gaming",
+      "icon": "⌘",
+      "description": "Level up your walls"
+    },
+    {
+      "id": "sports",
+      "name": "Sports & F1",
+      "icon": "🏁",
+      "description": "Bring home the thrill"
+    },
+    {
+      "id": "art",
+      "name": "Art & Quotes",
+      "icon": "✳",
+      "description": "A little inspiration daily"
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "icon": "✈",
+      "description": "Somewhere, someday"
+    },
+    {
+      "id": "superheroes",
+      "name": "Superheroes",
+      "icon": "✦",
+      "description": "Big-screen legends, reimagined"
+    },
+    {
+      "id": "divine",
+      "name": "Divine",
+      "icon": "☼",
+      "description": "Quiet moments of devotion"
+    },
+    {
+      "id": "regional-cinema",
+      "name": "Regional cinema",
+      "icon": "▣",
+      "description": "Stories close to home"
+    },
+    {
+      "id": "gym-quotes",
+      "name": "Gym & quotes",
+      "icon": "↗",
+      "description": "A little push for the day"
+    }
+  ],
+  "products": [
+    {
+      "id": "p001",
+      "slug": "midnight-drive",
+      "title": "Midnight Drive",
+      "categoryId": "cars",
+      "productType": "single",
+      "description": "A cinematic study of a midnight drive, made for people who never take the boring route.",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+      ],
+      "price": 399,
+      "originalPrice": 599,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3",
+        "13 × 19 in"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 98,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "p002",
+      "slug": "coastal-classic",
+      "title": "Coastal Classic",
+      "categoryId": "cars",
+      "productType": "single",
+      "description": "Vintage lines and open roads in a warm, sun-faded palette.",
+      "image": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 349,
+      "originalPrice": 499,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 86,
+      "createdAt": "2026-10-18"
+    },
+    {
+      "id": "p003",
+      "slug": "after-hours-anime",
+      "title": "After Hours",
+      "categoryId": "anime",
+      "productType": "single",
+      "description": "A dreamy, neon-lit city scene for late-night daydreamers.",
+      "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 399,
+      "originalPrice": 549,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 91,
+      "createdAt": "2026-10-17"
+    },
+    {
+      "id": "p004",
+      "slug": "sakura-season",
+      "title": "Sakura Season",
+      "categoryId": "anime",
+      "productType": "single",
+      "description": "Soft petals, a quiet afternoon, and a little room to breathe.",
+      "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 349,
+      "originalPrice": 499,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 79,
+      "createdAt": "2026-10-14"
+    },
+    {
+      "id": "p005",
+      "slug": "the-last-screening",
+      "title": "The Last Screening",
+      "categoryId": "movies",
+      "productType": "split-3",
+      "description": "A three-panel cinematic print with a little old-Hollywood magic.",
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 899,
+      "originalPrice": 1299,
+      "sizes": [
+        "A4",
+        "A3",
+        "13 × 19 in"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 82,
+      "createdAt": "2026-10-16"
+    },
+    {
+      "id": "p006",
+      "slug": "blue-note",
+      "title": "Blue Note",
+      "categoryId": "music",
+      "productType": "single",
+      "description": "A quiet tribute to records, warm lights, and one more song.",
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 399,
+      "originalPrice": 599,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 77,
+      "createdAt": "2026-10-12"
+    },
+    {
+      "id": "p007",
+      "slug": "pixel-dreams",
+      "title": "Pixel Dreams",
+      "categoryId": "gaming",
+      "productType": "single",
+      "description": "A colourful, playful print for your favourite corner of the game room.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 349,
+      "originalPrice": 499,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 74,
+      "createdAt": "2026-10-10"
+    },
+    {
+      "id": "p008",
+      "slug": "race-day",
+      "title": "Race Day",
+      "categoryId": "sports",
+      "productType": "split-4",
+      "description": "Four frames of speed, colour, and the rush before the lights go out.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 1099,
+      "originalPrice": 1499,
+      "sizes": [
+        "A4",
+        "A3",
+        "13 × 19 in"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 89,
+      "createdAt": "2026-10-21"
+    },
+    {
+      "id": "p009",
+      "slug": "make-room",
+      "title": "Make Room",
+      "categoryId": "art",
+      "productType": "single",
+      "description": "A minimal reminder to keep making space for the good things.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 299,
+      "originalPrice": 449,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 68,
+      "createdAt": "2026-10-08"
+    },
+    {
+      "id": "p010",
+      "slug": "somewhere-slow",
+      "title": "Somewhere Slow",
+      "categoryId": "travel",
+      "productType": "single",
+      "description": "A sun-soaked escape for the days when you need one.",
+      "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 399,
+      "originalPrice": 549,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": true,
+      "popularity": 73,
+      "createdAt": "2026-10-09"
+    },
+    {
+      "id": "p011",
+      "slug": "still-in-motion",
+      "title": "Still in Motion",
+      "categoryId": "sports",
+      "productType": "single",
+      "description": "A bold, abstract celebration of movement and momentum.",
+      "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 349,
+      "originalPrice": 499,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 62,
+      "createdAt": "2026-10-06"
+    },
+    {
+      "id": "p012",
+      "slug": "city-lights-triptych",
+      "title": "City Lights",
+      "categoryId": "travel",
+      "productType": "split-3",
+      "description": "A three-piece cityscape for the home that never sits still.",
+      "image": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 899,
+      "originalPrice": 1299,
+      "sizes": [
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 59,
+      "createdAt": "2026-10-03"
+    },
+    {
+      "id": "p013",
+      "slug": "the-guardian",
+      "title": "The Guardian",
+      "categoryId": "superheroes",
+      "productType": "single",
+      "description": "A graphic, comic-inspired hero portrait made for a little everyday courage.",
+      "image": "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 399,
+      "originalPrice": 549,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 66,
+      "createdAt": "2026-10-05"
+    },
+    {
+      "id": "p014",
+      "slug": "city-of-heroes",
+      "title": "City of Heroes",
+      "categoryId": "superheroes",
+      "productType": "single",
+      "description": "A bold night skyline for the comic-book dreamer in you.",
+      "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 349,
+      "originalPrice": 499,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 58,
+      "createdAt": "2026-10-02"
+    },
+    {
+      "id": "p015",
+      "slug": "quiet-prayer",
+      "title": "Quiet Prayer",
+      "categoryId": "divine",
+      "productType": "single",
+      "description": "A calm, considered print for a corner set aside for stillness.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 349,
+      "originalPrice": 499,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 54,
+      "createdAt": "2026-10-01"
+    },
+    {
+      "id": "p016",
+      "slug": "light-within",
+      "title": "Light Within",
+      "categoryId": "divine",
+      "productType": "single",
+      "description": "Warm tones and a gentle reminder to find a moment of peace.",
+      "image": "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 399,
+      "originalPrice": 549,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 49,
+      "createdAt": "2026-09-28"
+    },
+    {
+      "id": "p017",
+      "slug": "the-local-cut",
+      "title": "The Local Cut",
+      "categoryId": "regional-cinema",
+      "productType": "split-3",
+      "description": "A three-frame celebration of the stories and songs that feel like home.",
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 899,
+      "originalPrice": 1299,
+      "sizes": [
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 61,
+      "createdAt": "2026-09-25"
+    },
+    {
+      "id": "p018",
+      "slug": "matinee-memories",
+      "title": "Matinee Memories",
+      "categoryId": "regional-cinema",
+      "productType": "single",
+      "description": "A nostalgic cinema-inspired print for the film lover's favourite room.",
+      "image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 399,
+      "originalPrice": 549,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 52,
+      "createdAt": "2026-09-20"
+    },
+    {
+      "id": "p019",
+      "slug": "one-more-rep",
+      "title": "One More Rep",
+      "categoryId": "gym-quotes",
+      "productType": "single",
+      "description": "An energetic typographic print for the space where you show up.",
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 299,
+      "originalPrice": 449,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 63,
+      "createdAt": "2026-09-18"
+    },
+    {
+      "id": "p020",
+      "slug": "keep-going",
+      "title": "Keep Going",
+      "categoryId": "gym-quotes",
+      "productType": "single",
+      "description": "A clean, optimistic note for your training nook or desk.",
+      "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85",
+      "gallery": [],
+      "price": 299,
+      "originalPrice": 449,
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "available": true,
+      "featured": false,
+      "popularity": 57,
+      "createdAt": "2026-09-15"
+    }
+  ],
+  "wallLayouts": [
+    {
+      "id": "compact",
+      "name": "Compact Wall",
+      "slots": 3,
+      "dimensions": "40 × 50 cm",
+      "price": 1399,
+      "originalPrice": 1799,
+      "arrangement": [
+        {
+          "x": 20,
+          "y": 10,
+          "w": 28,
+          "h": 48
+        },
+        {
+          "x": 52,
+          "y": 10,
+          "w": 28,
+          "h": 48
+        },
+        {
+          "x": 36,
+          "y": 62,
+          "w": 28,
+          "h": 30
+        }
+      ]
+    },
+    {
+      "id": "classic",
+      "name": "Classic Wall",
+      "slots": 4,
+      "dimensions": "60 × 60 cm",
+      "price": 1899,
+      "originalPrice": 2499,
+      "arrangement": [
+        {
+          "x": 8,
+          "y": 8,
+          "w": 38,
+          "h": 38
+        },
+        {
+          "x": 54,
+          "y": 8,
+          "w": 38,
+          "h": 38
+        },
+        {
+          "x": 8,
+          "y": 54,
+          "w": 38,
+          "h": 38
+        },
+        {
+          "x": 54,
+          "y": 54,
+          "w": 38,
+          "h": 38
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Studio Wall",
+      "slots": 5,
+      "dimensions": "70 × 80 cm",
+      "price": 2399,
+      "originalPrice": 3199,
+      "arrangement": [
+        {
+          "x": 4,
+          "y": 8,
+          "w": 28,
+          "h": 34
+        },
+        {
+          "x": 36,
+          "y": 8,
+          "w": 28,
+          "h": 34
+        },
+        {
+          "x": 68,
+          "y": 8,
+          "w": 28,
+          "h": 34
+        },
+        {
+          "x": 20,
+          "y": 50,
+          "w": 28,
+          "h": 42
+        },
+        {
+          "x": 52,
+          "y": 50,
+          "w": 28,
+          "h": 42
+        }
+      ]
+    },
+    {
+      "id": "large",
+      "name": "Large Wall",
+      "slots": 6,
+      "dimensions": "90 × 80 cm",
+      "price": 2799,
+      "originalPrice": 3699,
+      "arrangement": [
+        {
+          "x": 4,
+          "y": 5,
+          "w": 27,
+          "h": 40
+        },
+        {
+          "x": 36,
+          "y": 5,
+          "w": 27,
+          "h": 40
+        },
+        {
+          "x": 68,
+          "y": 5,
+          "w": 27,
+          "h": 40
+        },
+        {
+          "x": 4,
+          "y": 53,
+          "w": 27,
+          "h": 40
+        },
+        {
+          "x": 36,
+          "y": 53,
+          "w": 27,
+          "h": 40
+        },
+        {
+          "x": 68,
+          "y": 53,
+          "w": 27,
+          "h": 40
+        }
+      ]
+    },
+    {
+      "id": "heart",
+      "name": "Heart Wall",
+      "slots": 6,
+      "dimensions": "80 × 75 cm",
+      "price": 2899,
+      "originalPrice": 3799,
+      "arrangement": [
+        {
+          "x": 15,
+          "y": 8,
+          "w": 28,
+          "h": 36
+        },
+        {
+          "x": 57,
+          "y": 8,
+          "w": 28,
+          "h": 36
+        },
+        {
+          "x": 4,
+          "y": 40,
+          "w": 28,
+          "h": 36
+        },
+        {
+          "x": 36,
+          "y": 40,
+          "w": 28,
+          "h": 36
+        },
+        {
+          "x": 68,
+          "y": 40,
+          "w": 28,
+          "h": 36
+        },
+        {
+          "x": 36,
+          "y": 70,
+          "w": 28,
+          "h": 26
+        }
+      ]
+    },
+    {
+      "id": "mosaic",
+      "name": "Mosaic Wall",
+      "slots": 8,
+      "dimensions": "100 × 90 cm",
+      "price": 3599,
+      "originalPrice": 4799,
+      "arrangement": [
+        {
+          "x": 4,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 28,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 52,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 76,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 4,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 28,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 52,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 76,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        }
+      ]
+    },
+    {
+      "id": "cinema",
+      "name": "Cinema Wall",
+      "slots": 5,
+      "dimensions": "80 × 90 cm",
+      "price": 2599,
+      "originalPrice": 3399,
+      "arrangement": [
+        {
+          "x": 6,
+          "y": 8,
+          "w": 26,
+          "h": 38
+        },
+        {
+          "x": 37,
+          "y": 8,
+          "w": 26,
+          "h": 38
+        },
+        {
+          "x": 68,
+          "y": 8,
+          "w": 26,
+          "h": 38
+        },
+        {
+          "x": 20,
+          "y": 54,
+          "w": 26,
+          "h": 38
+        },
+        {
+          "x": 54,
+          "y": 54,
+          "w": 26,
+          "h": 38
+        }
+      ]
+    },
+    {
+      "id": "full",
+      "name": "Full Wall",
+      "slots": 9,
+      "dimensions": "120 × 100 cm",
+      "price": 4299,
+      "originalPrice": 5799,
+      "arrangement": [
+        {
+          "x": 4,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 28,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 52,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 76,
+          "y": 4,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 4,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 28,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 52,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 76,
+          "y": 36,
+          "w": 20,
+          "h": 28
+        },
+        {
+          "x": 40,
+          "y": 68,
+          "w": 20,
+          "h": 28
+        }
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "mix-match",
+      "name": "Mix & match",
+      "description": "Buy 3 posters, save 15%",
+      "type": "quantity-percentage",
+      "minimumQuantity": 3,
+      "discountPercentage": 15,
+      "appliesTo": [
+        "single"
+      ]
+    },
+    {
+      "id": "free-delivery",
+      "name": "Free delivery",
+      "description": "Free delivery on orders over ₹1,499",
+      "type": "free-shipping",
+      "minimumSubtotal": 1499
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq1",
+      "question": "What are your posters printed on?",
+      "answer": "Our sample catalogue is designed for premium matte art paper. Exact paper and frame options can be confirmed when production details are finalized."
+    },
+    {
+      "id": "faq2",
+      "question": "How long does delivery take?",
+      "answer": "Delivery estimates shown in this demo are illustrative. Final delivery timing depends on your location and the selected products."
+    },
+    {
+      "id": "faq3",
+      "question": "Can I build a wall with my own photos?",
+      "answer": "Yes. Use the wall builder to preview a local image in a slot. Personal image previews stay in your browser and are not uploaded to a server."
+    },
+    {
+      "id": "faq4",
+      "question": "Can I change my order?",
+      "answer": "This is a demo checkout and does not process real payments. No real order will be fulfilled."
+    }
+  ],
+  "orders": []
+}
