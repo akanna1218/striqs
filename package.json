@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://akanna1218.github.io/striqs",
   "scripts": {
     "dev": "vite",
     "server": "json-server --watch db.json --port 3001",
     "start": "concurrently -k \"npm:server\" \"npm:dev\"",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -31,6 +34,7 @@
     "eslint": "^10.13.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
+    "gh-pages": "^6.3.0",
     "globals": "^17.13.0",
     "json-server": "^0.17.4",
     "vite": "^6.0.0"

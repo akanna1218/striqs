@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { HashRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { useEffect } from 'react'
 import theme from './app/theme'
@@ -15,7 +15,7 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import './App.css'
 
 function NotFoundPage() {
-  return <div className="not-found"><span className="eyebrow">404 · WRONG WALL</span><h1>This page wandered off.</h1><p>Let’s get you back to the good stuff.</p><a href="/">Back home</a></div>
+  return <div className="not-found"><span className="eyebrow">404 · WRONG WALL</span><h1>This page wandered off.</h1><p>Let’s get you back to the good stuff.</p><Link to="/">Back home</Link></div>
 }
 
 function ScrollToTop() {
@@ -41,7 +41,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <CartProvider>
-        <BrowserRouter>
+        <HashRouter>
           <ScrollToTop />
           <Routes>
             <Route element={<SiteLayout />}>
@@ -59,7 +59,7 @@ export default function App() {
               <Route path="*" element={<Navigate to="/not-found" replace />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </CartProvider>
     </ThemeProvider>
   )

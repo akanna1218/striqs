@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {
   Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, CardContent,
   Container, Grid, Stack, Typography,
@@ -12,11 +12,14 @@ import PosterCoverflowCarousel from '../components/PosterCoverflowCarousel'
 import { formatCurrency } from '../utils/pricing'
 import brandPosterImage from '../assets/striqs-instagram-feature.jpg'
 import brandRoomImage from '../assets/striqs-instagram-room.jpg'
+import floatingLogo from '../assets/STRIQS Red & White.png'
 
 export default function HomePage() {
   const [data, setData] = useState({ products: [], categories: [], layouts: [], faqs: [] })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const navigate = useNavigate()
 
   const load = () => {
     setLoading(true)
@@ -76,10 +79,42 @@ export default function HomePage() {
         <Box className="category-row">
           <SectionHeading eyebrow="FIND YOUR FRAME OF MIND" title="A little of everything." link="/shop" />
           <Grid container spacing={1.5} className="category-grid">
-            {categories.map((category) => <Grid key={category.id} size={{ xs: 6, sm: 4, md: 3, lg: 3 }}>
-              <Link className="category-tile" to={`/collections/${category.id}`}><span>{category.icon}</span><b>{category.name}</b></Link>
-            </Grid>)}
+            {categories.map((category) => (
+              <Grid key={category.id} size={{ xs: 6, sm: 4, md: 3, lg: 3 }}>
+                <Link className="category-tile" to={`/collections/${category.id}`}>
+                  <span>{category.icon}</span>
+                  <b>{category.name}</b>
+                </Link>
+              </Grid>
+            ))}
           </Grid>
+          <Box className="category-explorer">
+            <Button
+              className="floating-filter-trigger"
+              variant="contained"
+              color="secondary"
+              onClick={() => setFiltersOpen((open) => !open)}
+              aria-label="Open category filters"
+            >
+              <img src={floatingLogo} alt="Striqs" className="floating-filter-icon" />
+            </Button>
+            <Box className={`filter-bubble-panel ${filtersOpen ? 'open' : ''}`}>
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  className="filter-bubble"
+                  onClick={() => {
+                    setFiltersOpen(false)
+                    navigate(`/collections/${category.id}`)
+                  }}
+                >
+                  <span>{category.icon}</span>
+                  <small>{category.name}</small>
+                </button>
+              ))}
+            </Box>
+          </Box>
         </Box>
 
         <Box className="page-section">

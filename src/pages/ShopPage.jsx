@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import {
   Box, Button, Container, FormControl, InputLabel, MenuItem, Select,
   Stack, Typography,
@@ -70,8 +70,8 @@ export default function ShopPage() {
     {error && <ErrorState message={error} retry={load} />}
     <Stack className="shop-controls" direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ sm: 'center' }} spacing={1.5}>
       <Stack direction="row" spacing={1} flexWrap="wrap">
-        <Button variant={!categoryId ? 'contained' : 'outlined'} size="small" href="/shop">All</Button>
-        {categories.map((category) => <Button key={category.id} variant={categoryId === category.id ? 'contained' : 'outlined'} size="small" href={`/collections/${category.id}`}>{category.name}</Button>)}
+        <Button component={Link} to="/shop" variant={!categoryId ? 'contained' : 'outlined'} size="small">All</Button>
+        {categories.map((category) => <Button key={category.id} component={Link} to={`/collections/${category.id}`} variant={categoryId === category.id ? 'contained' : 'outlined'} size="small">{category.name}</Button>)}
       </Stack>
       <Stack direction="row" spacing={1.2}>
         <FormControl size="small" sx={{ minWidth: 140 }}><InputLabel id="type-label">Print type</InputLabel><Select labelId="type-label" label="Print type" value={type} onChange={(event) => updateParam('type', event.target.value)}><MenuItem value="all">All prints</MenuItem><MenuItem value="single">Single posters</MenuItem><MenuItem value="split">Split sets</MenuItem></Select></FormControl>
