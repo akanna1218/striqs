@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, CardContent,
@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { getCategories, getFaqs, getLayouts, getProducts } from '../services/storeService'
 import { ErrorState, ProductGrid, SectionHeading } from '../components/Catalog'
+import PosterCoverflowCarousel from '../components/PosterCoverflowCarousel'
 import { formatCurrency } from '../utils/pricing'
 import brandPosterImage from '../assets/striqs-instagram-feature.jpg'
 import brandRoomImage from '../assets/striqs-instagram-room.jpg'
@@ -16,6 +17,7 @@ export default function HomePage() {
   const [data, setData] = useState({ products: [], categories: [], layouts: [], faqs: [] })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
+
   const load = () => {
     setLoading(true)
     setError('')
@@ -27,6 +29,7 @@ export default function HomePage() {
       })
       .finally(() => setLoading(false))
   }
+
   useEffect(() => {
     let active = true
     Promise.all([getProducts(), getCategories(), getLayouts(), getFaqs()])
@@ -44,18 +47,26 @@ export default function HomePage() {
 
   const products = data.products
   const categories = data.categories
+  const heroProducts = products.filter((product) => product.available && product.image).slice(0, 8)
+
   return (
     <>
       <Box className="home-hero" style={{ backgroundImage: `linear-gradient(90deg, rgba(12,12,12,.77), rgba(12,12,12,.12)), url("${brandRoomImage}")` }}>
         <Container maxWidth="lg" className="hero-content">
-          <Typography className="hero-kicker">STRIQS COLLECTIVE · ART FOR YOUR WALLS</Typography>
-          <Typography component="h1" variant="h1">We put the<br />internet on walls.</Typography>
-          <Typography className="hero-copy">Unfortunately, it looks good. Discover statement posters, wall sets, and art that makes your space unmistakably yours.</Typography>
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} mt={3.5}>
-            <Button component={Link} to="/shop" variant="contained" color="secondary">Shop posters <ArrowForwardIcon sx={{ ml: 1 }} /></Button>
-            <Button component={Link} to="/build-your-wall" variant="outlined" className="hero-secondary">Build your wall</Button>
-          </Stack>
-          <Typography className="hero-note">Original drops · made to be lived with</Typography>
+          <Box className="hero-grid">
+            <Box className="hero-copy-panel">
+              <Typography className="hero-kicker">STRIQS COLLECTIVE · ART FOR YOUR WALLS</Typography>
+              <Typography component="h1" variant="h1">We put the<br />internet on walls.</Typography>
+              <Box className="hero-collection-panel" aria-label="Browse featured collections">
+                <PosterCoverflowCarousel products={heroProducts} categories={categories} />
+              </Box>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} mt={3.5} className="hero-actions">
+                <Button component={Link} to="/shop" variant="contained" color="secondary">Shop posters <ArrowForwardIcon sx={{ ml: 1 }} /></Button>
+                <Button component={Link} to="/build-your-wall" variant="outlined" className="hero-secondary">Build your wall</Button>
+              </Stack>
+              <Typography className="hero-note">Original drops · made to be lived with</Typography>
+            </Box>
+          </Box>
         </Container>
         <Box className="hero-float"><span>STRIQS ORIGINAL</span><b>Make your wall<br />say something.</b></Box>
       </Box>
@@ -116,6 +127,7 @@ export default function HomePage() {
           <Box className="faq-list">{data.faqs.map((faq) => <Accordion key={faq.id}><AccordionSummary expandIcon={<ExpandMoreIcon />}><Typography fontWeight={700}>{faq.question}</Typography></AccordionSummary><AccordionDetails><Typography color="text.secondary">{faq.answer}</Typography></AccordionDetails></Accordion>)}</Box>
         </Box>
       </Container>
+
       <Box className="newsletter" id="footer"><Container maxWidth="md"><Typography className="eyebrow">A NOTE FROM STRIQS</Typography><Typography variant="h2">Good things, occasionally.</Typography><Typography color="text.secondary" mt={1}>New drops and ideas for making a space feel like yours.</Typography><NewsletterForm /></Container></Box>
     </>
   )
@@ -124,6 +136,7 @@ export default function HomePage() {
 function NewsletterForm() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+
   return <Box component="form" className="newsletter-form" onSubmit={(event) => { event.preventDefault(); setSubscribed(true) }}>
     <input type="email" required aria-label="Email address" placeholder="Your email address" value={email} onChange={(event) => setEmail(event.target.value)} />
     <Button type="submit" variant="contained">Count me in</Button>

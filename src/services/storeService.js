@@ -1,13 +1,81 @@
 import apiClient from './apiClient'
+import mockData from '../../db.json'
 
-export const getProducts = async () => (await apiClient.get('/products')).data
-export const getProduct = async (slug) => {
-  const { data } = await apiClient.get('/products', { params: { slug } })
-  return data[0] || null
+const readLocalStorage = (key, fallback = []) => {
+  if (typeof window === 'undefined') return fallback
+  try {
+    const value = window.localStorage.getItem(key)
+    return value ? JSON.parse(value) : fallback
+  } catch {
+    return fallback
+  }
 }
-export const getCategories = async () => (await apiClient.get('/categories')).data
-export const getLayouts = async () => (await apiClient.get('/wallLayouts')).data
-export const getOffers = async () => (await apiClient.get('/offers')).data
-export const getFaqs = async () => (await apiClient.get('/faqs')).data
-export const createOrder = async (order) => (await apiClient.post('/orders', order)).data
-export const getOrder = async (id) => (await apiClient.get(`/orders/${id}`)).data
+
+const writeLocalStorage = (key, value) => {
+  if (typeof window === 'undefined') return
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value))
+  } catch {
+    // ignore storage quota issues during static hosting
+  }
+}
+
+const fallbackData = {
+  products: mockData.products || [],
+  categories: mockData.categories || [],
+  wallLayouts: mockData.wallLayouts || [],
+  offers: mockData.offers || [],
+  faqs: mockData.faqs || [],
+}
+
+const fetchWithFallback = async (endpoint, key) => {
+  try {
+    const { data } = await apiClient.get(endpoint)
+    return data ?? fallbackData[key]
+  } catch {
+    return fallbackData[key]
+  }
+}
+
+export const getProducts = async () => fetchWithFallback('/products', 'products')
+
+export const getProduct = async (slug) => {
+  try {
+    const { data } = await apiClient.get('/products', { params: { slug } })
+    return data[0] || fallbackData.products.find((product) => product.slug === slug) || null
+  } catch {
+    return fallbackData.products.find((product) => product.slug === slug) || null
+  }
+}
+
+export const getCategories = async () => fetchWithFallback('/categories', 'categories')
+export const getLayouts = async () => fetchWithFallback('/wallLayouts', 'wallLayouts')
+export const getOffers = async () => fetchWithFallback('/offers', 'offers')
+export const getFaqs = async () => fetchWithFallback('/faqs', 'faqs')
+
+export const createOrder = async (order) => {
+  try {
+    const { data } = await apiClient.post('/orders', order)
+    return data
+  } catch {
+    const nextOrder = {
+      ...order,
+      id: `mock-order-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+    }
+    const orders = readLocalStorage('striqs-orders', [])
+    const updatedOrders = [...orders, nextOrder]
+    writeLocalStorage('striqs-orders', updatedOrders)
+    return nextOrder
+  }
+}
+
+export const getOrder = async (id) => {
+  try {
+    const { data } = await apiClient.get(`/orders/${id}`)
+    return data
+  } catch {
+    const orders = readLocalStorage('striqs-orders', [])
+    return orders.find((order) => order.id === id) || null
+  }
+}

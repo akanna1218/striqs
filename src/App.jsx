@@ -1,5 +1,6 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import { useEffect } from 'react'
 import theme from './app/theme'
 import { CartProvider } from './context/CartContext'
 import SiteLayout from './components/SiteLayout'
@@ -17,12 +18,31 @@ function NotFoundPage() {
   return <div className="not-found"><span className="eyebrow">404 · WRONG WALL</span><h1>This page wandered off.</h1><p>Let’s get you back to the good stuff.</p><a href="/">Back home</a></div>
 }
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''))
+      if (element) {
+        window.scrollTo({ top: element.offsetTop - 90, behavior: 'smooth' })
+        return
+      }
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname, hash])
+
+  return null
+}
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <CartProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route element={<SiteLayout />}>
               <Route path="/" element={<HomePage />} />
